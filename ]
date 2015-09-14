@@ -1,0 +1,21 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch DS-anurag-assignment-3
+# Changes to be committed:
+#	new file:   DS/ds assignment-4/Hashing.java
+#	new file:   DS/ds assignment-4/HashingTest.java
+#	new file:   DS/ds assignment-4/HotelBooking.java
+#	new file:   DS/ds assignment-4/MainClass.java
+#	new file:   DS/ds assignment-4/PriorityQueueTest.java
+#	new file:   DS/ds assignment-4/ProrityQueue.java
+#	new file:   DS/ds assignment-4/Task.java
+#
+# Changes not staged for commit:
+#	deleted:    DS/BinaryTree/BinarySearchTree.java
+#	deleted:    DS/BinaryTree/BinarySearchTreeTest.java
+#	deleted:    DS/BinaryTree/CheckingMirriorSimilarTree.java
+#	deleted:    DS/BinaryTree/CheckingMirriorSimilarTreeTest.java
+#	deleted:    DS/BinaryTree/Node.java
+#	deleted:    DS/BinaryTree/PostOrder.java
+#
