@@ -1,0 +1,60 @@
+@CHARSET "ISO-8859-1
+/* body background of page */
+body 
+{
+    background:#D6FFD6;
+}
+/* Header of page */
+#header
+{
+	position:relative;
+	background:#C2F0F0;
+    height:40px;
+    text-align:left;
+    width:100%;
+    border-radius: 5px;
+    border:#0000Df 2px solid;
+    margin:auto;
+}
+
+/* font of header */
+#header h3 {
+	position:relative;
+	margin-top:10px;
+    color:#00CCCC;
+}
+/* Left nav of header */
+#leftNav
+ {
+	width:150px;
+	float:left;
+}
+/* right Navigation of page */
+#rightNav
+{
+	margin-top:50px;
+	margin-left:40%;
+}
+/* Wrapper of page */
+.wrapper
+{
+	border-radius:15px;
+	height: 700px;
+	width: 95%;
+	margin: auto;
+	background-color:white;
+}
+/* Profile pic of Profile in page*/
+.profilePic
+ {
+	position:relative;
+	box-shadow: 0px 0px 10px;
+	background-color:black;
+	height:200px;
+	margin:auto;
+	width:20%;
+	float: left;
+	border: 5px solid #ffffff;
+	top: 40px;
+	left: 20px;
+}
