@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation</title>
+</head>
+<!-- Body Style -->
+<body style="text-align: center;">
+<p>Click the button to get your coordinates.</p>
+<!-- Button used -->
+<button onclick="getLocation()">Get Location</button>
+
+<p id="findLocation"></p>
+<!-- Script used -->
+<script>
+var x = document.getElementById("findLocation");
+<!-- To find the location -->
+function getLocation()
+{
+    if (navigator.geolocation) 
+    {
+    	<!-- finds the position and returns it-->
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    else
+    { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+<!-- Position used and divided into Latitude and Longitude-->
+function showPosition(position) 
+{
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+</script>
+</body>
+</html>
