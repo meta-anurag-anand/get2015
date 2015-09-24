@@ -1,0 +1,52 @@
+/* css of Article Semantics*/
+article 
+{
+	padding: 5px;
+	border: dotted 3px #ff006e;
+	margin-top: 5px;
+}
+/* Css of Header semnatics*/
+header 
+{
+	padding: 0px;
+	text-align: center;
+}
+/* Css of aside semnatics*/
+aside 
+{
+	margin-top: 5px;
+	background-color: #f0eaea;
+	padding: 5px;
+	text-align: center;
+	font-style: italic;
+	border: double 3px #b200ff;
+}
+/* Css of Section semnatics*/
+section 
+{
+	padding: 5px;
+	border: dashed 3px #0026ff;
+	margin-top: 5px;
+}
+/* Css of footer semnatics*/
+footer 
+{
+	padding: 5px;
+	text-align: center;
+	font-weight: bold;
+}
+/* Css of nav semnatics*/
+nav 
+{
+	text-align: center;
+}
+
+/* Css of ul li */
+ul li {
+	display: inline;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: left;
+	font-size: 16px;
+	font-weight: bold;
+}

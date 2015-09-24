@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1";
+/* Css of container*/
+#container
+{
+	margin-left:500px;
+	background-color:#BDC6DC;
+	width:40%;
+	height:50%
+}
+/*Css of Header heading h1*/
+header h1
+{
+	text-align: center;
+
+}
+/* Css Of Section */
+section
+{
+	position:relative;
+	margin-top:50px;
+	margin-left:100px;
+	padding:40px;
+	width:300px;
+	background:#f0ffff ;
+}
+/* Css of footer*/
+footer
+{
+	text-align: center;
+	background: #FAF0E6;
+}
