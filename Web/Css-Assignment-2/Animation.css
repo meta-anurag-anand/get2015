@@ -1,0 +1,39 @@
+@CHARSET "ISO-8859-1";
+/* Div for anmiation*/
+#Animation 
+{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example 
+{
+    0%   {background-color : red; left:0px; top:100px;}
+    17%  {background-color : indigo; left:100px; top:0px;}
+    34%  {background-color : green; left:200px; top:100px;}
+    51%  {background-color : cyan; left:200px; top:200px;}
+    68%  {background-color : brown; left:100px; top:300px;}
+    85%  {background-color : orange; left:0px; top:200px;}
+    100% {background-color : yellow; left:0px; top:100px;}
+}
+
+/* Standard syntax */
+@keyframes example 
+{
+    0%   {background-color : red; left:0px; top:100px;}
+    17%  {background-color : indigo; left:100px; top:0px;}
+    34%  {background-color : green; left:200px; top:100px;}
+    51%  {background-color : cyan; left:200px; top:200px;}
+    68%  {background-color : brown; left:100px; top:300px;}
+    85%  {background-color : orange; left:0px; top:200px;}
+    100% {background-color : yellow; left:0px; top:100px;}
+    
+}

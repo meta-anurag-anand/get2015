@@ -1,0 +1,26 @@
+@CHARSET "ISO-8859-1";
+
+/* Class for rotate scale and skew*/
+.scale, .rotate, .skew
+ {
+	height: 200px;
+	width: 200px;
+	background-color: Cyan;
+	float: left;
+	margin: 10%;
+}
+/*class for Scale hover*/
+.scale:hover
+ {
+	transform: scale(4, 2);
+}
+/* Class For rotate hover*/
+.rotate:hover 
+{
+	transform: rotate(50deg);
+}
+/* Class for skew hover*/
+.skew:hover 
+{
+	transform: skew(40deg, 20deg);
+}
