@@ -1,0 +1,20 @@
+@CHARSET "ISO-8859-1";
+/* body css*/
+body 
+{
+	background-image: url(Hello.jpg), url(Background.jpg);
+	background-position: right bottom, right top;
+	background-repeat: no-repeat,repeat;
+}
+/* Css of the Round corners Leaf*/
+#roundcorners
+ {
+ 	margin-left:200px;
+ 	margin-top:200px;
+	width: 100px;
+	height: 100px;
+	background-color: #A0DE21;
+	-moz-border-radius: 100px 0px;
+	-webkit-border-radius: 100px 0px;
+	border-radius: 100px 0px;
+}
