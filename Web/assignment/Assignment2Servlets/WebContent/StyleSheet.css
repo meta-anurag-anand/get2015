@@ -1,0 +1,161 @@
+*/*Set's border, padding and margin to 0 for all values*/
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+/* Sets the property of the body and html */
+body, html 
+{
+    color: #373C40;
+    font-family: Verdana,Arial, Helvetica, sans-serif;
+    height: 100%;
+    margin:10px;
+}
+/* css Of h*/
+h1 
+{
+    font-weight:200;
+    color: #800080;
+    font-size:16pt;
+    padding-left:33px;
+    margin:7px 5px 8px 8px;
+}
+/* Register of form*/
+form.register
+{
+    width:800px;
+    margin: 20px auto 0px auto;
+    height:530px;
+    background-color:#fff;
+    padding:5px;
+}
+/* property of p*/
+form p
+{
+    font-size: 8pt;
+    clear:both;
+    margin: 0;
+    color:gray;
+    padding:4px;
+}
+/*field set property */
+form.register fieldset.row1
+{
+    width:770px;
+    padding:5px;
+    float:left;
+    border:1px solid #F5F5F5;
+    margin-bottom:15px;
+}
+/* Field set propert label*/
+form.register fieldset.row1 label
+{
+    width:140px;
+    float: left;
+    text-align: right;
+    margin-right: 6px;
+    margin-top:2px;
+}
+/* fieldset row2 css*/
+form.register fieldset.row2
+{
+    border:1px solid #F5F5F5;
+    padding:5px;
+    float:left;
+	width:770px;
+	background-color: #c0c0c0;
+}
+/* Legend Property*/
+form.register legend
+{
+    color: #c2dd25;
+    padding:2px;
+    margin-left: 14px;
+    font-weight:bold;
+    font-size: 14px;
+    font-weight:100;
+}
+/* Label Of form Register*/
+form.register label
+{
+    color:#444;
+    width:98px;
+    float: left;
+    text-align: right;
+    margin-right: 6px;
+    margin-top:2px;
+}
+/* Text area css*/
+form.register textarea
+{
+	 float:left;
+	 border: 1px solid #E1E1E1;
+}
+/* Input css*/
+form.register input
+{
+    width: 140px;
+    color: #505050;
+    float: left;
+    margin-right: 5px;
+}
+/* number input css*/
+form.register input[type=number]
+{
+	 border: 1px solid #E1E1E1;
+}
+/* Text Input css*/
+form.register input[type=text]
+{
+    border: 1px solid #E1E1E1;
+    height: 18px;
+}
+/* Password css*/
+form.register input[type=password]
+{
+    border: 1px solid #E1E1E1;
+    height: 18px;
+}
+/* Label css*/
+label
+{
+	font-weight: bold;
+	display: block;
+	width: 150px;
+	float: left;
+}
+/* button css*/
+.button
+{
+    padding: 8px 10px 8px;
+    color: black;
+    text-decoration: none;
+	background-color: grey;
+    cursor: pointer;
+    float:left;
+    font-size:18px;
+    margin-left:300px;
+}
+/* p.agreement */
+{
+    margin-left:10px;
+}
+/* agreement label*/
+p.agreement label 
+{
+    width:390px;
+    text-align:left;
+    margin-top:3px;
+	margin-left:5px;
+}
+/* Span css for color*/
+span
+{
+	color: red;
+}
+/* Input Focus and Select focus*/
+input:focus, select:focus,textarea:focus
+{
+    background-color: #efffe0;
+}
