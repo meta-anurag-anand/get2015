@@ -1,0 +1,125 @@
+@CHARSET "ISO-8859-1";
+/* Body css */
+body
+{
+	margin: 0;
+	padding: 0;
+	background-color: #b9e7ff;
+}
+/* Header Css */
+header 
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	float: left;
+	background-color: #323232;
+}
+/*Logo Css*/
+#logo 
+{
+	margin: 0 0 0 20px;
+	padding: 0;
+	width: 25%;
+	float: left;
+	font-weight: bold;
+	color: WHITE;
+}
+/*Nav Css  */
+nav 
+{
+	margin: 10px 0 0 0;
+	padding: 0;
+	width: 60%;
+	float: left;
+	color: WHITE;
+}
+/*Nav ul Css*/
+nav ul 
+{
+	margin: 0 20px 0 0;
+	padding: 0;
+	float: right;
+}
+/* Nav li css */
+nav li 
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	position: relative;
+}
+/* nav Ul li anchor css */
+nav ul li a 
+{
+	margin: 0 5px 0 5px;
+	padding: 15px 10px 10px 10px;
+	float: left;
+	display: block;
+	height: 100%;
+	width: 150px;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+}
+/* Hover css */
+nav ul li a:HOVER 
+{
+	border-radius: 5px;
+	box-shadow: 0 0 10px #8080ff;
+	background-color: #8080ff;
+}
+/* Content css*/
+#content
+ {
+	width: 80%;
+	margin: 2% 0 0 0;
+	padding: 0 10% 0 10%;
+	float: left;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 130%;
+}
+/* Description css*/
+#description p
+ {
+	margin: 0;
+	padding: 0 3% 0 0;
+	width: 50%;
+	float: left;
+	border-right: 2px solid BLACK;
+}
+/* Image css*/
+#image
+ {
+	float: left;
+	margin: 0 0 0 3%;
+	padding: 0;
+	width: 30%;
+}
+/* Image property*/
+img {
+	max-width: 100%;
+}
+
+#content a
+ {
+	margin: 0 5px 0 5px;
+	padding: 5px;
+	display: block;
+	width: 150px;
+	font-weight: bold;
+	text-align: center;
+	color: #057FC1;
+	text-decoration: none;
+}
+/* Hover Css*/
+#content a:HOVER
+ {
+	border-radius: 5px;
+	box-shadow: 0 0 10px GRAY;
+	background-color: #94CDEC;
+}
