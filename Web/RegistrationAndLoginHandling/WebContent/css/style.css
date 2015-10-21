@@ -1,0 +1,33 @@
+@CHARSET "ISO-8859-1";
+/* Body Css */
+body 
+{
+	background-color: #F5EFEF;
+}
+/*Wrapper Css  */
+#wrapper
+ {
+	margin: 0 auto;
+	margin-top: 70px;
+	width: 400px;
+	height: 200px;
+	padding-top: 40px;
+	border-radius: 25px;
+}
+/* Error Message */
+.error
+{
+	color: red;
+}
+/* Section Div Css */
+section
+{
+	margin: 0 auto;
+	width: 1200px;
+	height: 50px;
+	background-color: #747474;
+	font-size: 40px;
+	font-family: fantasy;
+	text-align: center;
+	color: white;
+}
