@@ -7,10 +7,3 @@ email varchar(100),
 primary key(id)
 );
 
-insert into employee (name,email) values ('pooja','pooja@gmail.com');
-
-select * from employee where id=2;
-
-select * from employee;
-
-delete from employee where id=1;
