@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Movie Review</title>
+<!-- Links  -->
+<link
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></link>
+<script type="text/javascript"
+	src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bufferData.js"></script>
+
+<script>
+	//document ready function
+	$(document).ready(function() 
+	{
+		// Function is Called
+		loadData();
+		$('#myTable').dataTable(
+		{
+			// Length of table
+			"iDisplayLength" : 5,
+			"bPaginate" : true,
+			"bInfo" : false,
+			// Search Bar
+			"bFilter" : true,
+			"bLengthChange" : false
+		});
+	});
+</script>
+
+</head>
+<body>
+	<!-- Nav  Bar -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<!-- Icon Bar -->
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"> MetaCube </a>
+			</div>
+			<!-- Collapse the Nav bar for extra Small -->
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="MovieReview.html" class="hidden-sm"> Home </a> <a
+						href="MovieReview.html" class="hidden-lg hidden-md hidden-xs"> <span
+							class="glyphicon glyphicon-home"></span>
+					</a></li>
+					<!--  Label -->
+					<li><a href="#" class="hidden-sm">About</a> <a href="#"
+						class="hidden-lg hidden-md hidden-xs"> <span
+							class="glyphicon glyphicon-user"></span>
+					</a></li>
+					<!--  Label -->
+					<li><a href="#" class="hidden-sm">Contact Us</a> <a href="#"
+						class="hidden-lg hidden-md hidden-xs"> <span
+							class="glyphicon glyphicon-phone-alt"></span>
+					</a></li>
+					<!--  Label -->
+					<li><a href="#" class="hidden-sm">Movie Form</a> <a href="#"
+						class="hidden-lg hidden-md hidden-xs"> <span
+							class="glyphicon glyphicon-facetime-video"></span>
+					</a></li>
+					<!--  Label -->
+					<li><a href="#" class="hidden-sm">Movie Reviews</a> <a
+						href="#" class="hidden-lg hidden-md hidden-xs"> <span
+							class="glyphicon glyphicon-eye-open"></span>
+					</a></li>
+					<!--  Label -->
+					<li class="dropdown"><a class="dropdown-toggle hidden-sm"
+						data-toggle="dropdown" href="#"> CSS <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<!-- Drop Down -->
+							<li><Button>Butt</Button></li>
+							<li><a href="#">Panel</a></li>
+							<li><a href="#">Grid</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Pagination</a></li>
+							<li><a href="#">Progress Bar</a></li>
+						</ul> <a class="dropdown-toggle hidden-lg hidden-md hidden-xs"
+						data-toggle="dropdown" href="#"> <span
+							class="glyphicon glyphicon-fire"></span>
+					</a>
+						<!-- Drop Down -->
+						<ul class="dropdown-menu">
+							<li><a href="#">Button</a></li>
+							<li><a href="#">Panel</a></li>
+							<li><a href="#">Grid</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Pagination</a></li>
+							<li><a href="#">Progress Bar</a></li>
+						</ul></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Container Fluid -->
+	<div class="container-fluid">
+		<div class="table-responsive">
+			<table id="myTable" class="display table" Style="width: 100%">
+				<thead>
+					<tr>
+						<!--  Heading -->
+						<th>Title</th>
+						<th>Genre</th>
+						<th>Director</th>
+						<th>Review</th>
+						<th>Rating</th>
+					</tr>
+				</thead>
+				<!-- Table Body -->
+				<tbody id="mytableTbody">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
