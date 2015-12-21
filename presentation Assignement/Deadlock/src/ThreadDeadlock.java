@@ -2,7 +2,6 @@
 /**
  * @class  ThreadDeadlock 
  * @author Anurag
- * @since 12th December 
  * This class controls the flow of the threads in the program.
  */
 
