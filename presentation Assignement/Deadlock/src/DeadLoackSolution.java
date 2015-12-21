@@ -2,8 +2,6 @@
 /**
  * @class DeadLoackSolution
  * @author Anurag
- * @since 12th December
- * This class controls the flow of the threads.
  */
 
 public class DeadLoackSolution {
@@ -38,7 +36,6 @@ public class DeadLoackSolution {
 /**
  * @class SyncThread1
  * @author Anurag
- * @since 12th December
  * @implements Runnable
  * This class implements the runnable interface and defines the run
  * function for thread with deadlock prevention.
