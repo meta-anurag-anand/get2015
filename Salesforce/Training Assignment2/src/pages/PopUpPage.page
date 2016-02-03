@@ -1,0 +1,24 @@
+<apex:page standardController="Student__c" id="Page" sidebar="false" showHeader="false">
+    
+    <script>
+    
+    window.onload = function() {
+        var nam = '{!Student__c.Name}';
+        var classnam = '{!Student__c.Class__r.name}';
+        document.getElementById('{!$Component.block1.block2.block3.name}').innerText = nam;
+        document.getElementById('{!$Component.block1.block2.block3.className}').innerText = classnam;
+        
+        
+        
+    }
+    </script>
+    <apex:pageBlock id="block1">
+        <apex:pageBlockSection id="block2">
+            <apex:pageBlockSectionItem id="block3">
+                <apex:outputText id="name"  ></apex:outputText>
+                <apex:outputText id="className"></apex:outputText>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+</apex:page>

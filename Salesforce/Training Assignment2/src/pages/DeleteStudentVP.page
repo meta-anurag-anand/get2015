@@ -1,0 +1,75 @@
+<apex:page id="pageID" standardController="Student__c"
+	recordSetVar="Students">
+	<apex:includescript value="/soap/ajax/30.0/connection.js"></apex:includescript>
+	<apex:includescript value="/soap/ajax/30.0/apex.js"></apex:includescript>
+	<apex:form id="FormID">
+	
+		<apex:pageBlock title="Selected Student" id="pblock">
+
+			<apex:pageBlockSection id="blockSection" columns="3"> 
+                Student Details
+            </apex:pageBlockSection>
+            
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton onclick="confirmDelete();" value="Confirm" />
+				<apex:commandButton action="{!cancel}" value="cancel" />
+			</apex:pageBlockButtons>
+			
+		</apex:pageBlock>
+	</apex:form>
+	<script>
+	    <!-- Getting the Session id -->
+	    sforce.connection.sessionId = "{!$Api.Session_ID}";
+	    <!-- Splitting the results ON the basis of & and , -->
+	    var idParameter = window.location.search.substring(1);
+	    var param=idParameter.split('=');
+	    var recordsRecieved=decodeURIComponent(param[1]).split('&')
+	    var records=recordsRecieved[0].split(',');
+	    
+	    //Loop to convert the Integer into string
+	    for (var i = 0; i < records.length; i++) {
+	        records[i]="'"+records[i]+"'";
+	    }
+	    
+	    <!--  Query to get the Records -->
+	    var query = "SELECT Id,First_Name__c,class__r.Name__c from Student__c where Id IN (" + records + ")";
+	    result = sforce.connection.query(query);                                
+	    records = result.getArray("records"); 
+	    
+	    var  newStudent;
+	    
+	    <!-- For building Dynamic Table-->
+	    var buildTable="<table border='1'><tr><td>Id</td><td>Name</td><td>Class Name</td></tr>";
+	    
+	    for(var i=0;i<records.length;i++){	
+	        newStudent=records[i];
+	        buildTable=buildTable+"<tr><td>"+newStudent.Id+"</td><td>"+newStudent.Name+"</td><td>"+newStudent.Class__r.Name+"</td></tr>";
+	        
+	    }
+	    <!-- To provide where to add the table-->
+	    document.getElementById('{!$Component.pageID.FormID.pblock.blockSection}').innerHTML=str+"</table>";
+	    
+	    /*
+	    *Name: confirmDelete
+	    *Description: Delete the selected Record
+	    *param:
+	    *return:
+	    */
+	    function confirmDelete(){
+	        var idList=[];
+	        <!-- Loop to add all the record to be deleted -->
+	        for (var i = 0; i < records.length; i++) {
+	            newStudent=records[i];
+	            idList[i]=newStudent.Id;
+	        }
+	        <!-- Deleting the Record -->
+	        var delResult = sforce.connection.deleteIds([idList]);
+	        if (delResult[0].getBoolean("success")) {
+	            alert("students deleted");
+	        } else {
+	            alert("failed to delete student");
+	        }
+	        //window.location='https://ap2.salesforce.com/a0A?fcf=00B28000000zDMH';
+	    }
+    </script>
+</apex:page>
