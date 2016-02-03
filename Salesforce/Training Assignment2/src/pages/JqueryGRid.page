@@ -1,0 +1,61 @@
+<apex:page standardController="Account" showHeader="false" sidebar="false">
+	<script src="{!$Resource.jQuery}"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.12.1/css/ui.jqgrid.min.css "/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.12.1/js/i18n/grid.locale-de.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.12.1/js/jquery.jqgrid.min.js"></script>
+	<script src="/soap/ajax/11.0/connection.js"></script>
+	<script src="/soap/ajax/11.0/apex.js"></script>
+	
+	<!-- Css for the Grid -->
+	<style type="text/css">
+		.ui-jqgrid tr.jqgrow td {
+			height:auto;
+			vertical-align:text-top;
+			padding:6px 6px;
+			text-overflow:ellipsis;
+		}
+	</style>
+	
+	<script type="text/javascript">
+	
+		window.onload=function() { 
+			// Getting the Session Id
+			sforce.connection.sessionId = "{!$Api.Session_ID}";
+			
+			try {	
+				var gridData;
+				var obj;
+				// Result to store the Record
+				queryResult = sforce.connection.query("SELECT Id,Name,Owner.name,Phone,(SELECT Id FROM Contacts) FROM Account ORDER BY isActive__C DESC,name");
+		
+				var recordsToPopulate = queryResult.getArray("records");
+				// Unload the JqueryGrid
+		
+				$("#grid").jqGrid("GridUnload");
+				//Populates the Data
+		
+				gridData = JSON.stringify(recordsToPopulate);
+				// Parse the Data 
+		
+				obj = JSON.parse(gridData);  
+				jQuery("#grid").jqGrid({
+					data: recordsToPopulate,
+					datatype: 'local',
+					//Header of columns
+					colNames:['Id','Name','Manager','Phone','Number Contact'],
+					//Populates the Data
+					colModel:[
+					          {name:'Id',index:'Id', width:100,sortable:false},
+					          {name:'Name',index:'Name', width:100},
+					          {name:'Owner.Name',index:'Owner.Name', width:100,sortable:false},
+					          {name:'Phone',index:'Phone', width:100,sortable:false},
+					          {name:'Contacts.size',index:'Number Contact', width:100,sortable:false}],
+				});   
+			}catch(error) {
+				alert(error); 
+			}	
+		}
+		
+		</script>
+<table id='grid'></table>
+</apex:page>
