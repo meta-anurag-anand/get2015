@@ -1,0 +1,24 @@
+<apex:page standardController="Account" extensions="GovernerLimitsController">
+   <apex:pageBlock >
+   
+   <!-- Buttons for Updating the Record -->
+   	<apex:pageBlockButtons >
+           <apex:form >
+       			<apex:commandButton value="Update First 10 Records" action="{!updateNoOfQuery}" />
+           </apex:form>
+       </apex:pageBlockButtons>
+       
+       <!-- Page Block To show The Details -->
+       <apex:pageBlock >
+	       <apex:pageBlockTable value="{!accountList}" var="acc">
+		       <apex:column value="{!acc.Id}" />
+		       <apex:column value="{!acc.Name}" />
+	       </apex:pageBlockTable>
+       </apex:pageBlock>
+       
+       <!-- Page Block to show the %dml Used -->
+       <apex:pageBlock >
+   		<apex:outputLabel value="{!dmlQueryUsedPercentage}"> % DML used</apex:outputLabel>
+       </apex:pageBlock>
+   </apex:pageBlock>
+</apex:page>
