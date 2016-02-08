@@ -1,0 +1,86 @@
+<apex:page standardController="Purchase_Order__c" extensions="ShoppingController" >
+    <apex:form >
+        <apex:pageBlock id="ProductList">
+            <apex:facet name="header">Order Detail</apex:facet>
+            <!-- Page Block for the Header -->
+            <apex:pageBlockSection >
+                <apex:outputField value="{!Purchase_Order__c.owner.name}"></apex:outputField>
+                <apex:outputField value=" {!Purchase_Order__c.Grand_Total__c}"></apex:outputField>
+            </apex:pageBlockSection>
+            <!-- Page Block table for Adding And Removing Items -->
+            <apex:pageBlockTable value="{!items}" var="product" >
+                <apex:facet name="header">Products in cart</apex:facet>
+                <apex:column >
+                    <apex:facet name="header">Remove from Cart</apex:facet>
+                    <apex:commandButton value="Remove" action="{!RemoveFromCart}" rerender="ProductList" >
+                        <apex:param name="idOfProductToAdd" value="{!product.id}" assignTo="{!idOfProductToAdd}" />
+                    </apex:commandButton>
+                </apex:column>
+                <!-- Columns -->
+                <apex:column >
+                    <apex:facet name="header">Product Name</apex:facet>
+                    <apex:outputField value="{!product.name}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Product Code</apex:facet>
+                    <apex:outputText value="{!product.Product_Code__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Quantity</apex:facet>
+                    <apex:outputField value="{!product.Quantity__c}" id="QuantityValue" >
+                        <apex:inlineEditSupport event="ondblClick" 
+                                                showOnEdit="saveButton"/> 
+                        <apex:commandButton value="Save" immediate="true" action="{!updateQuantity}" oncomplete="" id="saveButton"  rerender="ProductList" >
+                            <apex:param name="idOfProductToAdd" value="{!product.id}" assignTo="{!idOfProductToAdd}" />
+                            <apex:param name="QuantityNumber" value="{!product.Quantity__c}" assignTo="{!QuantityNumber}" />
+                        </apex:commandButton>
+                    </apex:outputField>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Price</apex:facet>
+                    <apex:outputField value="{!product.Unit_Price__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Total Price</apex:facet>
+                    <apex:outputField value="{!product.Total_Price__c}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <!-- Page Block  for The Product Issued -->
+        <apex:pageBlock >
+            <apex:facet name="header">Select Category</apex:facet>
+            <apex:selectList value="{!SelectedCategory}" size="1" >
+                <apex:actionSupport event="onchange" action="{!populateProducts}" rerender="product"/>
+                <apex:selectOptions value="{!Category}"/>
+            </apex:selectList>
+            <apex:outputPanel id="product">
+                <apex:pageBlockTable value="{!products}" var="product" >
+                    <apex:facet name="header">Product Detail</apex:facet>
+                    <apex:column >
+                        <apex:facet name="header">Add To Cart</apex:facet>
+                        <apex:commandButton value="ADD" action="{!AddToCart}" rerender="ProductList" >
+                            <apex:param name="idOfProductToAdd" value="{!product.id}" assignTo="{!idOfProductToAdd}" />
+                        </apex:commandButton>
+                    <!-- Header -->
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Product Name</apex:facet>
+                        <apex:outputField value="{!product.name}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Product Code</apex:facet>
+                        <apex:outputField value="{!product.ProductCode}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Price</apex:facet>
+                        <apex:outputField value="{!product.Price__c}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Category</apex:facet>
+                        <apex:outputField value="{!product.Category__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
